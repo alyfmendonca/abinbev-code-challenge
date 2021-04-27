@@ -1,0 +1,23 @@
+<section class="single-item">
+    <img [src]="singleProduct.image" alt="{{singleProduct.name}}">
+    <h3>{{singleProduct.name}}</h3>
+    <p class="units">
+        {{singleProduct.units}}
+        <i *ngIf="singleProduct.isRecyclable"><img src="../../../assets/images/recyclable.svg" alt="Recyclable"></i>
+    </p>
+    <p class="price">{{singleProduct.price}}</p>
+    <small>{{singleProduct.onSale}}</small>
+    <p>
+        <a [href]="singleProduct.detailLink">View details</a>
+    </p>
+
+    <div class="count-section">
+        <button (click)="qtdSelected = qtdSelected + 1" class="add-sub-button plus"></button>
+
+        <input type="number" [value]="qtdSelected">
+
+        <button (click)="qtdSelected = qtdSelected - 1" class="add-sub-button minus"></button>
+
+        <button (click)="submit()" class="submit-button">{{buttonTitle}}</button>
+    </div>
+</section>
