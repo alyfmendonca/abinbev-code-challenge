@@ -2,5 +2,24 @@
 @import '../assets/scss/grid.scss';
 
 .main-content{
-    padding: 100px 0;
+    padding: 50px 0;
+}
+
+footer {
+    background: $yellow;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    article{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        p{
+            font-size: 20px;
+        }
+    }
+
 }

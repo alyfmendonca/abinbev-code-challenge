@@ -1,3 +1,10 @@
 <section class="grid main-content">
   <app-single-item *ngFor="let prodruct of products"  [singleProduct]="prodruct" class="cell-3-desktop cell-4-tablet cell-4-phone"></app-single-item>
 </section>
+
+<footer>
+  <article class="grid">
+    <h3>Cart</h3>
+    <p>RD${{ cart$ | async }}</p>
+  </article>
+</footer>

@@ -1,4 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+import { increment } from 'src/app/actions/cart.action';
+import { CartModel } from 'src/app/models/cart.model';
 
 @Component({
   selector: 'app-single-item',
@@ -11,13 +15,17 @@ export class SingleItemComponent implements OnInit {
   buttonTitle = 'ADD';
   qtdSelected : number = 0;
 
-  constructor() { }
+  constructor(
+    private store: Store<CartModel>,
+  ) { }
 
   ngOnInit(): void {
   }
 
-  submit(){
-
+  submit(product: any){
+    let price = this.qtdSelected * product.price; 
+    this.store.dispatch(increment({value: price}));
   }
+
 
 }

@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { SingleItemComponent } from './components/single-item/single-item.component';
+import { StoreModule } from '@ngrx/store';
+
+import {cartReducer} from './reducers/cart.reducers';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,10 @@ import { SingleItemComponent } from './components/single-item/single-item.compon
     SingleItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({
+      cart: cartReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
